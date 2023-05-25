@@ -105,12 +105,15 @@ const Card_One = () => {
     <Card>
       {/* <CardTitle>Hello</CardTitle> */}
       <CardCodeWrapper>
-        <CardCodeInput inputHTML={`<div class="p-8"></div>`} />
+        <CardCodeInput inputHTML={`<div class="p-8 flex"></div>`} />
         <CardCodeOutput
-          outputHTML={`<div class="p-8"></div>`}
+          outputHTML={`<div class="p-8 flex"></div>`}
           outputCSS={`
 .p-8 {
   padding: 1rem;
+}
+.flex {
+  display: flex;
 }
         `}
         />
@@ -123,13 +126,17 @@ const Card_Two = () => {
     <Card>
       {/* <CardTitle>Hello</CardTitle> */}
       <CardCodeWrapper>
-        <CardCodeInput inputHTML={`<div class="p-[2rem]"></div>`} />
+        <CardCodeInput inputHTML={`<div class="p-[2rem] mt-[5vw]"></div>`} />
         <CardCodeOutput
-          outputHTML={`<div class="p-[2rem]"></div>`}
+          outputHTML={`<div class="p-[2rem] mt-[5vw]"></div>`}
           outputCSS={`
 .p-[2rem] {
   padding: 2rem;
-}`}
+}
+.mt-[5vw] {
+  margin-top: 5vw;
+}
+`}
         />
       </CardCodeWrapper>
     </Card>
@@ -168,8 +175,10 @@ const Card_Four = () => {
   padding: calc(100% - 2rem);
 }
 
-/* theme(space.8) will be converted to 2rem by the compiler */
-      `}
+/* theme(space.8) will be converted 
+   to 2rem by the compiler, based on the 
+   theme config for space.
+*/      `}
         />
       </CardCodeWrapper>
     </Card>
@@ -180,12 +189,17 @@ const Card_Five = () => {
     <Card>
       {/* <CardTitle>Hello</CardTitle> */}
       <CardCodeWrapper>
-        <CardCodeInput inputHTML={`<div class="[padding:5vw]"></div>`} />
+        <CardCodeInput
+          inputHTML={`<div class="[padding:5vw] [align-items:inherit]"></div>`}
+        />
         <CardCodeOutput
-          outputHTML={`<div class="[padding:5vw]"></div>`}
+          outputHTML={`<div class="[padding:5vw] [align-items:inherit]"></div>`}
           outputCSS={`
 .[padding:5vw] {
   padding: 5vw;
+}
+.[align-items:inherit] {
+  align-items: inherit;
 }
       `}
         />
@@ -208,7 +222,10 @@ const Card_Six = () => {
   margin: 2rem;
 }
 
-/* theme(space.8) will be converted to 2rem by the compiler */
+/* theme(space.8) will be converted 
+   to 2rem by the compiler, based on the 
+   theme config for space.
+*/
       `}
         />
       </CardCodeWrapper>
